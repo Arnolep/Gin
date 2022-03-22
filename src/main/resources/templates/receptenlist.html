@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}" href="../static/css.css"/>
+    <title>receptenlist</title>
+</head>
+<body>
+<div class="row1">
+    <div class="row1content">
+        <h2>venues</h2>
+        <div class="filters">
+            <div class="onefilter">
+                <div class="filtername">water?</div>
+                <a  class="buttonLook filterButton" th:classappend="(${filterWater}==null) ? 'activeFilter' : ''"
+                    th:href="@{/receptenlist}">all</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterWater}=='yes') ? 'activeFilter' : ''"
+                    th:href="@{/receptenlist/water/yes}">yes</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterWater}=='no') ? 'activeFilter' : ''"
+                    th:href="@{/receptenlist/water/no}">no</a>
+            </div>
+<div th:replace="fragments/header :: header">Header</div>
+<div th:each="recept: ${recepten}">
+    <a class="buttonLook mediumButton"
+       th:href="@{|/receptdetails1/${recept.id}|}"
+       th:text="${recept.Name}">venue name</a>
+</div>
+    </div>
+</div>
+</div>
+</body>
+</html>
