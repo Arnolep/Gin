@@ -19,8 +19,15 @@
                     th:href="@{/receptenlist/water/yes}">yes</a>
                 <a  class="buttonLook filterButton" th:classappend="(${filterWater}=='no') ? 'activeFilter' : ''"
                     th:href="@{/receptenlist/water/no}">no</a>
+                <div class="filtername">suiker?</div>
+                <a  class="buttonLook filterButton" th:classappend="(${filterSugar}==null) ? 'activeFilter' : ''"
+                    th:href="@{/receptenlist}">all</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterSugar}=='yes') ? 'activeFilter' : ''"
+                    th:href="@{/receptenlist/sugar/yes}">yes</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterSugar}=='no') ? 'activeFilter' : ''"
+                    th:href="@{/receptenlist/sugar/no}">no</a>
             </div>
-
+        </div>
 <div th:each="recept: ${recepten}">
     <a class="buttonLook mediumButton"
        th:href="@{|/receptdetails1/${recept.id}|}"

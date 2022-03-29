@@ -27,7 +27,7 @@
 </div>
 <div class="row1">
     <div class="row1content">
-        <h2>Cocktails? </h2>
+        <h3>Voorgestelde cocktail? </h3>
         <div class="venuelist">
             <div th:each="recept:${brand.recept}">
                 <a class="buttonLook mediumButton" th:href="@{|/receptdetails1/${recept.id}|}">
@@ -35,6 +35,16 @@
                 </a>
             </div>
         </div>
+    </div>
+</div>
+<div class="row1">
+    <div class="row1content">
+        <h3>Terug naar overzicht? </h3>
+        <div class="venuelist">
+<a class="buttonLook mediumButton"
+   th:href="@{|/brandlist|}"
+>Merken</a>
+    </div>
     </div>
 </div>
 <div class="row1">

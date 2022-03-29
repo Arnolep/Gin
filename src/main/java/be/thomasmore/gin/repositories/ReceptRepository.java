@@ -15,4 +15,6 @@ public interface ReceptRepository extends CrudRepository<Recept,Integer> {
     Optional<Recept> findFirstByOrderByIdAsc();
 
     Iterable<Recept> findByWater(boolean yes);
+
+    Iterable<Recept> findBySugar(boolean yes);
 }

@@ -13,6 +13,7 @@ public class Recept {
     private String BakingAndSpices;
     private String Liquids;
     private boolean water;
+    private boolean sugar;
 
 public Recept(){
 
@@ -25,6 +26,14 @@ public Recept(){
         this.Condiments = condiments;
         this.BakingAndSpices = bakingAndSpices;
         this.Liquids = liquids;
+    }
+
+    public boolean isSugar() {
+        return sugar;
+    }
+
+    public void setSugar(boolean sugar) {
+        this.sugar = sugar;
     }
 
     public boolean isWater() {

@@ -14,4 +14,8 @@ public interface BrandRepository extends CrudRepository<Brand,Integer> {
     Optional<Brand> findFirstByIdGreaterThanOrderByIdAsc(int id);
 
     Optional<Brand> findFirstByOrderByIdAsc();
+
+    Iterable<Brand> findBylondondry(boolean yes);
+
+    Iterable<Brand> findByspiced(boolean yes);
 }

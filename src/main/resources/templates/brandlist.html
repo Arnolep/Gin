@@ -6,9 +6,28 @@
     <title>Brandlist</title>
 </head>
 <body>
+<div th:replace="fragments/header :: header">Header</div>
 <div class="row1">
     <div class ="row1content">
-<div th:replace="fragments/header :: header">Header</div>
+        <h2>Merken</h2>
+        <div class="filters">
+            <div class="onefilter">
+                <div class="filtername">London dry?</div>
+                <a  class="buttonLook filterButton" th:classappend="(${filterlondondry}==null) ? 'activeFilter' : ''"
+                    th:href="@{/brandlist}">all</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterlondondry}=='yes') ? 'activeFilter' : ''"
+                    th:href="@{/brandlist/londondry/yes}">yes</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterlondondry}=='no') ? 'activeFilter' : ''"
+                    th:href="@{/brandlist/londondry/no}">no</a>
+                <div class="filtername">Gekruid?</div>
+                <a  class="buttonLook filterButton" th:classappend="(${filterspiced}==null) ? 'activeFilter' : ''"
+                    th:href="@{/brandlist}">all</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterspiced}=='yes') ? 'activeFilter' : ''"
+                    th:href="@{/brandlist/spiced/yes}">yes</a>
+                <a  class="buttonLook filterButton" th:classappend="(${filterspiced}=='no') ? 'activeFilter' : ''"
+                    th:href="@{/brandlist/spiced/no}">no</a>
+            </div>
+        </div>
 <div th:each="brand: ${brands}">
     <a class="buttonLook mediumButton"
        th:href="@{|/branddetails/${brand.id}|}"

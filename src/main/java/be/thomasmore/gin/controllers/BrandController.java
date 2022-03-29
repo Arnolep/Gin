@@ -55,5 +55,20 @@ public class BrandController {
         model.addAttribute("brands", allbrands);
         return "brandlist";
     }
+    @GetMapping("/brandlist/londondry/{filter}")
+    public String receptenlistLondondryYes(Model model, @PathVariable String filter) {
+        final Iterable<Brand> brands = brandRepository.findBylondondry(filter.equals("yes"));
+        model.addAttribute("brands", brands);
+        model.addAttribute("filterlondondry", filter.equals("yes") ? "yes" : "no");
+        return "brandlist";
+    }
+    @GetMapping("/brandlist/spiced/{filter}")
+    public String receptenlistSpicedYes(Model model, @PathVariable String filter) {
+        final Iterable<Brand> brands = brandRepository.findByspiced(filter.equals("yes"));
+        model.addAttribute("brands", brands);
+        model.addAttribute("filterspiced", filter.equals("yes") ? "yes" : "no");
+        return "brandlist";
+    }
+
 }
 

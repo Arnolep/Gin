@@ -10,6 +10,8 @@ public class Brand {
     @Id
     private Integer id;
     private String name;
+    private boolean londondry;
+    private boolean spiced;
     @Column(length = 800)
     private String description;
     @ManyToOne
@@ -32,6 +34,22 @@ public class Brand {
 
     public void setRecept(Recept recept) {
         this.recept = recept;
+    }
+
+    public boolean isLondondry() {
+        return londondry;
+    }
+
+    public void setLondondry(boolean londondry) {
+        this.londondry = londondry;
+    }
+
+    public boolean isSpiced() {
+        return spiced;
+    }
+
+    public void setSpiced(boolean spiced) {
+        this.spiced = spiced;
     }
 
     public Integer getId() {
