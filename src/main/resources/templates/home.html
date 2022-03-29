@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}" href="../static/css.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
     <title>Home</title>
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
-<h2>hallo dit is gin.</h2>
+<div class="row1">
+    <img th:src="@{/img/best-gin-brands-luxe-digital.jpg.webp}" src="../static/img/best-gin-brands-luxe-digital.jpg.webp" alt="Gin" height="491" width="982"/>
+</div>
 </body>
 </html>

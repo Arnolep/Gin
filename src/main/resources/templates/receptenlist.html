@@ -6,6 +6,7 @@
     <title>receptenlist</title>
 </head>
 <body>
+<div th:replace="fragments/header :: header">Header</div>
 <div class="row1">
     <div class="row1content">
         <h2>Gin</h2>
@@ -19,11 +20,11 @@
                 <a  class="buttonLook filterButton" th:classappend="(${filterWater}=='no') ? 'activeFilter' : ''"
                     th:href="@{/receptenlist/water/no}">no</a>
             </div>
-<div th:replace="fragments/header :: header">Header</div>
+
 <div th:each="recept: ${recepten}">
     <a class="buttonLook mediumButton"
        th:href="@{|/receptdetails1/${recept.id}|}"
-       th:text="${recept.Name}">venue name</a>
+       th:text="${recept.Name}">brand name</a>
 </div>
     </div>
 </div>

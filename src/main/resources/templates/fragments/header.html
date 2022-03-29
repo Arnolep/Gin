@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>header</title>
 </head>
 <body>
-<div class="nav" th:fragment="header">
-    <h1>GIN</h1>
+<div th:fragment="header">
+    <div class="nav">
+    <h1 style="color: white">GIN</h1>
     <div class="navbuttons">
-        <a class="buttonLook menuButton" th:href="@{/home}">home</a>
-        <a class="buttonLook menuButton" th:href="@{/receptenlist}">receptenlijst</a>
-        <a class="buttonLook menuButton" th:href="@{/receptdetails1}">receptendetails</a>
+        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/home}">home</a>
+        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/receptenlist}">cocktailrecepten</a>
+<!--        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/receptdetails1}">receptendetails</a>-->
+<!--        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/branddetails}">branddetails</a>-->
+        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/brandlist}">Merken</a>
     </div>
+</div>
+    <div class="freespaceforheader"></div>
 </div>
 </body>
 </html>

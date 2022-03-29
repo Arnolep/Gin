@@ -35,18 +35,16 @@
       <div class="infoLineValue" th:text="${recept.getLiquids()}">liquids</div>
     </div>
     <div class="infoLine">
-      <div class="infoLineName">others:</div>
-      <div class="infoLineValue" th:text="${recept.getOthers()}">others</div>
-    </div>
-    <div class="infoLine">
       <div class="infoLineName">water?</div>
-      <div class="infoLineValue" th:text="${recept.isWater()}">water</div>
+      <div class="infoLineValue" th:text="${recept.isWater()}">water?</div>
     </div>
     </div>
   </div>
+<div class="row1">
   <div class="row1content" th:unless="${recept}">
     <p>Er is geen recept gekozen</p>
   </div>
+</div>
 </div>
 </body>
 </html>

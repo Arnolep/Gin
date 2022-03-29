@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
+    <title>Brandlist</title>
+</head>
+<body>
+<div class="row1">
+    <div class ="row1content">
+<div th:replace="fragments/header :: header">Header</div>
+<div th:each="brand: ${brands}">
+    <a class="buttonLook mediumButton"
+       th:href="@{|/branddetails/${brand.id}|}"
+       th:text="${brand.Name}">brand name</a>
+</div>
+    </div>
+</div>
+</body>
+</html>

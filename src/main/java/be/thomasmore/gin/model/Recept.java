@@ -12,7 +12,6 @@ public class Recept {
     private String Condiments;
     private String BakingAndSpices;
     private String Liquids;
-    private String others;
     private boolean water;
 
 public Recept(){
@@ -26,7 +25,6 @@ public Recept(){
         this.Condiments = condiments;
         this.BakingAndSpices = bakingAndSpices;
         this.Liquids = liquids;
-        this.others = others;
     }
 
     public boolean isWater() {
@@ -85,11 +83,5 @@ public Recept(){
         Liquids = liquids;
     }
 
-    public String getOthers() {
-        return others;
-    }
 
-    public void setOthers(String others) {
-        this.others = others;
-    }
 }
