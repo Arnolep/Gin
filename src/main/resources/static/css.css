@@ -1,17 +1,8 @@
-/*
-    https://coolors.co/d0cfec-6a8e7f-989572-c6ae82-edc7cf
-SOAP: #D0CFEC;
-AUTOMETALSAURUS: #6A8E7F
-ARTICHOKE: #989572
-LIGHT FRENCH BEIGE: #C6AE82
-CAMEO PINK: #EDC7CF
- */
+
 * {
     margin: 0;
     box-sizing: border-box;
 }
-
-/* general styles for html elements */
 
 body {
     background-color: whitesmoke;
@@ -46,9 +37,7 @@ a {
     text-decoration: none;
 }
 
-
-/* general layout shared by all pages */
-.nav {
+.menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -62,26 +51,12 @@ a {
 .freespaceforheader {
     margin: 150px 0 20px 0;
 }
-
-/*navigation buttons in header*/
-.navbuttons {
+.menubuttons {
     display: flex;
 }
-
-.bottom {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
-    height: 30px;
-    font-size: 0.7em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.list {
+    float: left;
 }
-
-.bottom p {
-    text-align: center;
-}
-
 .row1 {
     display: flex;
     position: relative;
@@ -95,10 +70,6 @@ a {
 .row1content {
     flex-grow: 4;
     margin: 0 50px;
-}
-
-.cols2 {
-    position: relative;
 }
 
 .filters {
@@ -117,10 +88,6 @@ a {
     margin-right: 3px;
 }
 
-.onefilter input[type="text" i] {
-    width: 18em;
-}
-
 .onefilter input[type="number" i] {
     width: 5em;
 }
@@ -130,16 +97,6 @@ a {
     text-align: right;
 }
 
-/* links that look like buttons */
-.buttons {
-    flex-grow: 1;
-    position: absolute;
-    top: 10px;
-    right: 50px;
-}
-
-
-/* links that do or don't look like buttons */
 .buttonLook {
     background-color: #EDC7CF;
     color: #6A8E7F;
@@ -158,12 +115,6 @@ a {
     color: #EDC7CF;
 }
 
-a.largeButton {
-    width: 200px;
-    font-size: 2em;
-    padding: 1em;
-}
-
 
 a.mediumButton {
     display: block;
@@ -171,10 +122,6 @@ a.mediumButton {
     width: 400px;
     font-size: 1.2em;
     padding: 1em;
-}
-
-.venueExtraInfo {
-    font-size: small;
 }
 
 a.smallButton {
@@ -212,51 +159,21 @@ a.activeFilter {
     display: inline-block;
 }
 
-a.linkLook {
-    background-color: transparent;
-    color: #6A8E7F;
-}
-
-a.linkLook:hover {
-    background-color: transparent;
-    color: #989572;
-}
-
-/* list page only */
-.venuelist {
-    float: left;
-}
-
-/* details page only */
-.venueinfo {
-    margin: 30px 0;
-}
-
-.venueExtraInfo {
-    font-size: small;
-}
-
-.infoLine {
+.info {
     margin: 15px 0;
     font-size: 1em;
     display: flex;
 }
-
-.infoLineName {
+.infoName {
     width: 13em;
 }
 
-.infoLineValue {
+.infoValue {
     font-size: 1.2em;
     text-align: left;
+    max-width: 50%;
 }
 
-input.infoLineValue, select.infoLineValue, textarea.infoLineValue {
-    background-color: #eeedfd;
-    color: #4c6c5d;
-    border-width: 1px;
-    margin: -2px;
-}
 
 .prevButtonDiv {
     position: fixed;
@@ -266,7 +183,7 @@ input.infoLineValue, select.infoLineValue, textarea.infoLineValue {
 
 .nextButtonDiv {
     position: fixed;
-    right: 10px;
+    right: 50%;
     top: 160px;
 
 }
@@ -276,19 +193,11 @@ input.infoLineValue, select.infoLineValue, textarea.infoLineValue {
     right: 60px;
 }
 
-/* home page only */
-.row2 {
-    background-color: #989572;
-    color: #EDC7CF;
-    height: 400px;
-    padding: 60px 0;
-}
-
-.row3 {
-    background-color: #C6AE82;
-    height: 300px;
-    padding: 60px 0;
+.abouttext{
+    width: 50%;
+    border: 5px solid black;
     text-align: center;
+    margin-left: 25%;
 }
 
 

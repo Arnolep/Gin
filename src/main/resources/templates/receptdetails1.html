@@ -2,58 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}" href="../static/css.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}" href="../static/css.css"/>
     <title>Title</title>
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
 <div class="row1">
-  <div class="row1content" th:if="${recept}">
-    <div class="prevButtonDiv">
-      <a class="buttonLook smallButton" th:href="@{|/receptdetails1/${recept.id}/prev|}">&lt;</a>
+    <div class="row1content" th:if="${recept}">
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/receptdetails1/${recept.id}/prev|}">&lt;</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/receptdetails1/${recept.id}/next|}">&gt;</a>
+        </div>
+        <h2 th:text="${recept.getName}">venuedetails</h2>
+        <div class="info">
+            <div class="infoName">Produce:</div>
+            <div class="infoValue" th:text="${recept.getProduce()}">produce</div>
+        </div>
+        <div class="info">
+            <div class="infoName">Condiments:</div>
+            <div class="infoValue" th:text="${recept.getCondiments()}">condiments</div>
+        </div>
+        <div class="info">
+            <div class="infoName">Baking and Spices:</div>
+            <div class="infoValue" th:text="${recept.getBakingAndSpices()}">bakingNspices</div>
+        </div>
+        <div class="info">
+            <div class="infoName">Liquids:</div>
+            <div class="infoValue" th:text="${recept.getLiquids()}">liquids</div>
+        </div>
     </div>
-    <div class="nextButtonDiv">
-      <a class="buttonLook smallButton" th:href="@{|/receptdetails1/${recept.id}/next|}">&gt;</a>
-    </div>
-
-    <h2 th:text="${recept.getName}">venuedetails</h2>
-
-      <div class="infoLine">
-        <div class="infoLineName">Produce:</div>
-        <div class="infoLineValue" th:text="${recept.getProduce()}">produce</div>
-      </div>
-      <div class="infoLine">
-        <div class="infoLineName">Condiments:</div>
-        <div class="infoLineValue" th:text="${recept.getCondiments()}">condiments</div>
-      </div>
-      <div class="infoLine">
-        <div class="infoLineName">Baking and Spices:</div>
-        <div class="infoLineValue" th:text="${recept.getBakingAndSpices()}">bakingNspices</div>
-      </div>
-    <div class="infoLine">
-      <div class="infoLineName">Liquids:</div>
-      <div class="infoLineValue" th:text="${recept.getLiquids()}">liquids</div>
-    </div>
-<!--    <div class="infoLine">-->
-<!--      <div class="infoLineName">water?</div>-->
-<!--      <div class="infoLineValue" th:text="${recept.isWater()}">water?</div>-->
-<!--    </div>-->
-    </div>
-  </div>
-<div class="row1">
-  <div class="row1content">
-    <h3>Terug naar overzicht? </h3>
-    <div class="venuelist">
-      <a class="buttonLook mediumButton"
-         th:href="@{|/receptenlist|}"
-      >Cocktails</a>
-    </div>
-  </div>
 </div>
 <div class="row1">
-  <div class="row1content" th:unless="${recept}">
-    <p>Er is geen recept gekozen</p>
-  </div>
+    <div class="row1content">
+        <h3>Terug naar overzicht? </h3>
+        <div class="list">
+            <a class="buttonLook mediumButton"
+               th:href="@{|/receptenlist|}"
+            >Cocktails</a>
+        </div>
+    </div>
+</div>
+<div class="row1">
+    <div class="row1content" th:unless="${recept}">
+        <p>Er is geen recept gekozen</p>
+    </div>
 </div>
 </div>
 </body>

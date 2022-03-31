@@ -19,8 +19,8 @@
         <h2 th:text="${brand.getName}">branddetails</h2>
 
         <div class="infoLine">
-            <div class="infoLineName">Omschrijving:</div>
-            <div class="infoLineValue" th:text="${brand.getDescription()}">omschrijving</div>
+            <div class="infoName">Omschrijving:</div>
+            <div class="infoValue" th:text="${brand.getDescription()}">omschrijving</div>
         </div>
 
     </div>
@@ -28,7 +28,7 @@
 <div class="row1">
     <div class="row1content">
         <h3>Voorgestelde cocktail? </h3>
-        <div class="venuelist">
+        <div class="list">
             <div th:each="recept:${brand.recept}">
                 <a class="buttonLook mediumButton" th:href="@{|/receptdetails1/${recept.id}|}">
                     <span th:text="${recept.name}">recept name </span>
@@ -40,7 +40,7 @@
 <div class="row1">
     <div class="row1content">
         <h3>Terug naar overzicht? </h3>
-        <div class="venuelist">
+        <div class="list">
 <a class="buttonLook mediumButton"
    th:href="@{|/brandlist|}"
 >Merken</a>

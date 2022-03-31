@@ -37,7 +37,7 @@ public class ReceptController {
         return "receptdetails1";
     }
     @GetMapping({"/receptdetails1/{id}/next"})
-    public String venuedetailsNext(Model model, @PathVariable int id) {
+    public String receptdetailsNext(Model model, @PathVariable int id) {
         Optional<Recept> nextReceptFromDb = receptRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
         if (nextReceptFromDb.isPresent())
             return String.format("redirect:/receptdetails1/%d", nextReceptFromDb.get().getId());
@@ -53,7 +53,7 @@ public class ReceptController {
         model.addAttribute("filterWater", filter.equals("yes") ? "yes" : "no");
         return "receptenlist";
     }
-    @GetMapping("/receptenlist/suiker/{filter}")
+    @GetMapping("/receptenlist/sugar/{filter}")
     public String receptenlistSugarYes(Model model, @PathVariable String filter) {
         final Iterable<Recept> recepten = receptRepository.findBySugar(filter.equals("yes"));
         model.addAttribute("recepten", recepten);
@@ -66,5 +66,6 @@ public class ReceptController {
         model.addAttribute("recepten", allRecepten);
         return "receptenlist";
     }
+
     }
 

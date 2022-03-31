@@ -28,6 +28,7 @@ public Recept(){
         this.Liquids = liquids;
     }
 
+
     public boolean isSugar() {
         return sugar;
     }
