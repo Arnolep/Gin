@@ -68,14 +68,14 @@ a {
 }
 
 .row1content {
-    flex-grow: 4;
+    flex-grow: 2;
     margin: 0 50px;
 }
 
 .filters {
-    margin: 15px 50px 0 0;
+    margin: 15px 20px 0 0;
     float: left;
-    width: 35%;
+    width: 25%;
 }
 
 .onefilter {
@@ -98,20 +98,21 @@ a {
 }
 
 .buttonLook {
-    background-color: #EDC7CF;
+    background-color: #a4caf3;
     color: #6A8E7F;
+    border-radius: 50px 20px 0 20px;
     text-decoration: none;
     text-align: center;
     box-shadow: 1px 1px 1px darkgrey;
 }
 
 .buttonLook:hover {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
+    background-color: #a4caf3;
+    color: black;
 }
 
 .buttonLook:active {
-    background-color: #6A8E7F;
+    background-color: #a4caf3;
     color: #EDC7CF;
 }
 
@@ -136,6 +137,11 @@ a.menuButton {
     width: 8em;
     padding: 0.2em;
 }
+a.homeButton {
+    margin: 0 10px 0 410px;
+    width: 8em;
+    padding: 0.2em;
+}
 
 .filterButton {
     margin: 20px 0;
@@ -143,38 +149,59 @@ a.menuButton {
     border: none;
     font-size: medium;
 }
-
 a.activeFilter {
-    background-color: #f3a4b4;
+    background-color: #a4caf3;
     color: #2b3e35;
 }
 
 .editButton {
     font-size: 1.2em;
-    margin: 0 0.6em 0 0;
+    margin: 50px 0.6em 0 0;
     padding: 1.2em;
-    background-color: #C6AE82;
+    background-color: #8e9dad;
     color: #4c6c5d;
     border-width: 0;
     width: 5em;
     display: inline-block;
 }
-
+.editButtonDivNew{
+    position: absolute;
+    right: 380px;
+    top:48px
+}
 .info {
     margin: 15px 0;
     font-size: 1em;
     display: flex;
 }
 .infoName {
+    margin: 15px 5px;
     width: 13em;
 }
 
 .infoValue {
     font-size: 1.2em;
+    margin: 15px 5px;
     text-align: left;
     max-width: 50%;
 }
+.foto{
+    float: left;
+    width: 23%;
 
+}
+.foto2{
+    float: right;
+    width: 23%;
+    margin-right: 0;
+}
+.abouttext{
+    margin-left: 2.5%;
+    width: 49%;
+    border: 5px solid black;
+    text-align: center;
+    float: left;
+}
 
 .prevButtonDiv {
     position: fixed;
@@ -191,15 +218,11 @@ a.activeFilter {
 
 .editButtonDiv {
     position: absolute;
-    right: 60px;
+    right: 600px;
+    top:48px
 }
 
-.abouttext{
-    width: 50%;
-    border: 5px solid black;
-    text-align: center;
-    margin-left: 25%;
-}
+
 .errormessage{
     float: left;
 }

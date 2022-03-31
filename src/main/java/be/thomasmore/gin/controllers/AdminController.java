@@ -34,6 +34,8 @@ private BrandRepository brandRepository;
                                 @ModelAttribute("brand") Brand brand) {
         logger.info("brandEditPost " + id + " -- new name= " + brand.getName());
         logger.info("brandEditPost " + id + " -- new description= " + brand.getDescription());
+        logger.info("brandEditPost " + id + " -- new cocktailID= " + brand.getDescription());
+        logger.info("brandEditPost " + id + " -- new introduced= " + brand.getDescription());
         brandRepository.save(brand);
         return "redirect:/branddetails/" + id;
        }
@@ -46,7 +48,7 @@ private BrandRepository brandRepository;
     @PostMapping("/brandnew")
     public String brandNewPost(Model model,
                                @ModelAttribute("brand") Brand brand) {
-        logger.info("brandNewPost -- new name=" + brand.getName() + ", description=" + brand.getDescription() +", cocktail=" +brand.getRecept());
+        logger.info("brandNewPost -- new name=" + brand.getName() + ", description=" + brand.getDescription() +", cocktail=" +brand.getRecept()+", introduced= "+brand.getIntroduced());
         Brand newBrand = brandRepository.save(brand);
         return "redirect:/branddetails/" + newBrand.getId();
     }

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>brandnew</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
+    <title>Nieuw merk</title>
 </head>
 <body>
 
@@ -25,6 +26,10 @@
                 <div class="infoLine">
                     <label for="brandDescription" class="infoLineName">Beschrijving: </label>
                     <input id="brandDescription" th:field="*{brand.description}" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="brandIntroduced" class="infoLineName">Geïntroduceerd: </label>
+                    <input id="brandIntroduced" th:field="*{brand.introduced}" class="infoLineValue">
                 </div>
                 <div class="infoLine">
                     <label for="brandRecept" class="infoLineName">Bijhorende cocktail ID: </label>

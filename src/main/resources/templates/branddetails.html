@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Merk</title>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
 </head>
 <body>
@@ -20,11 +20,15 @@
         </div>
 
         <h2 th:text="${brand.getName}">branddetails</h2>
-
+        <div class="infoLine">
+            <div class="infoName">Geïntroduceerd:</div>
+            <div class="infoValue" th:text="${brand.getIntroduced()}">geïntroduceerd</div>
+        </div>
         <div class="infoLine">
             <div class="infoName">Omschrijving:</div>
             <div class="infoValue" th:text="${brand.getDescription()}">omschrijving</div>
         </div>
+
 
     </div>
 </div>
@@ -44,7 +48,7 @@
     <div class="row1content">
         <h3>Terug naar overzicht? </h3>
         <div class="list">
-            <a class="buttonLook mediumButton"
+            <a class="buttonLook smallButton"
                th:href="@{|/brandlist|}">Merken</a>
         </div>
     </div>

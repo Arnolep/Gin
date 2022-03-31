@@ -32,7 +32,7 @@ public class BrandController {
         return "branddetails";
     }
 
-    @GetMapping({"/branddetails/{id}/prev"})
+    @GetMapping({"/branddetails/{id}/prev","/brandetails/{id}/prev"})
     public String receptdetailsPrev(Model model, @PathVariable int id) {
         Optional<Brand> prevBrandFromDb = brandRepository.findFirstByIdLessThanOrderByIdDesc(id);
         if (prevBrandFromDb.isPresent())
@@ -42,7 +42,7 @@ public class BrandController {
             return String.format("redirect:/branddetails/%d", lastBrandFromDb.get().getId());
         return "branddetails";
     }
-    @GetMapping({"/branddetails/{id}/next"})
+    @GetMapping({"/branddetails/{id}/next","/brandetails/{id}/next"})
     public String branddetailsNext(Model model, @PathVariable int id) {
         Optional<Brand> nextBrandFromDB = brandRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
         if (nextBrandFromDB.isPresent())

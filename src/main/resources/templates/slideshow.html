@@ -3,7 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
+    <title>Slideshow</title>
     <style>
+
         .mySlides {
             display: none
         }
@@ -13,22 +15,29 @@
         }
 
         .slideshow-container {
-            max-width: 1000px;
-            max-height: 500px;
-            position: relative;
-            margin: auto;
+            margin-top: 48px;
+            width: 49%;
+            float: left;
+            margin-left: 2.5%;
         }
 
         .dot {
             cursor: pointer;
             height: 15px;
             width: 15px;
-            margin: 0 2px;
+            margin: 50px 2px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
             transition: background-color 0.6s ease;
         }
+
+        .dots {
+
+            float: left;
+            margin-left: 25%;
+        }
+
 
         .dot:hover {
             background-color: #717171;
@@ -51,29 +60,44 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
+<img class="foto" th:src="@{/img/historyofgin3.jpg}" src="../static/img/historyofgin3.jpg">
 <div class="slideshow-container">
     <div class="mySlides fade" style="text-align:center">
         <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg}"
              src="../static/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg">
+    </div>
+    <div class="mySlides fade" style="text-align:center">
+        <img th:src="@{/img/frambozen.jpg}" src="../static/img/frambozen.jpg" width="728" height="410">
     </div>
 
     <div class="mySlides fade" style="text-align:center">
         <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg}"
              src="../static/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg">
     </div>
+    <div class="mySlides fade" style="text-align:center">
+        <img th:src="@{/img/NTK_Tanqueray_Social.jpg}" src="../static/img/NTK_Tanqueray_Social.jpg" width="728"
+             height="410">
+    </div>
 
     <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/tefal-3.jpg}" src="../static/img/tefal-3.jpg">
+        <img th:src="@{/img/tefal-3.jpg}" src="../static/img/tefal-3.jpg" width="728" height="410">
     </div>
+    <div class="mySlides fade" style="text-align:center">
+        <img th:src="@{/img/malfy-italian-gin_3.png}" src="../static/img/malfy-italian-gin_3.png" width="728"
+             height="410">
+    </div>
+
 </div>
+<img class="foto2" th:src="@{/img/historyofgin2.jpg}" src="../static/img/historyofgin2.jpg">
 <br>
-<div style="text-align:center">
+<div style="text-align:center" class="dots">
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
 </div>
-
-
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);

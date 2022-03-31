@@ -16,7 +16,7 @@ public class ReceptController {
     @Autowired
     private ReceptRepository receptRepository;
 
-    @GetMapping({"/receptdetails1/{id}", "/receptdetails1"})
+    @GetMapping({"/receptdetails1/{id}", "/receptdetails1","/recepdetails1/{id}","/recepdetails1"})
 
     public String receptdetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "receptdetails1";
