@@ -119,6 +119,7 @@ a {
 a.mediumButton {
     display: block;
     margin: 10px auto;
+    height: 100px;
     width: 400px;
     font-size: 1.2em;
     padding: 1em;
@@ -198,6 +199,9 @@ a.activeFilter {
     border: 5px solid black;
     text-align: center;
     margin-left: 25%;
+}
+.errormessage{
+    float: left;
 }
 
 

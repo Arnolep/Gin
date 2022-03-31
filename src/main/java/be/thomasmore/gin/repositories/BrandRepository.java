@@ -10,11 +10,16 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BrandRepository extends CrudRepository<Brand,Integer> {
+
+
     @Query("SELECT b FROM Brand b WHERE " +
             "(:minIntroduced IS NULL OR :minIntroduced <= b.introduced) AND " +
             "(:maxIntroduced IS NULL OR b.introduced <= :maxIntroduced)")
     List<Brand> findByFilter(@Param("minIntroduced") Integer minIntroduced,
                              @Param("maxIntroduced") Integer maxIntroduced);
+
+
+
     Optional<Brand> findFirstByIdLessThanOrderByIdDesc(int id);
 
     Optional<Brand> findFirstByOrderByIdDesc();

@@ -3,16 +3,22 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
-
     <style>
-        .mySlides {display: none}
-        img {vertical-align: middle;}
+        .mySlides {
+            display: none
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
         .slideshow-container {
             max-width: 1000px;
             max-height: 500px;
             position: relative;
             margin: auto;
         }
+
         .dot {
             cursor: pointer;
             height: 15px;
@@ -24,7 +30,7 @@
             transition: background-color 0.6s ease;
         }
 
-        .active, .dot:hover {
+        .dot:hover {
             background-color: #717171;
         }
 
@@ -34,23 +40,26 @@
         }
 
         @keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
         }
     </style>
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
-</div>
-<div class="freespaceforheader"></div>
-</div>
 <div class="slideshow-container">
     <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg}" src="../static/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg" >
+        <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg}"
+             src="../static/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg">
     </div>
 
     <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg}" src="../static/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg" >
+        <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg}"
+             src="../static/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg">
     </div>
 
     <div class="mySlides fade" style="text-align:center">
@@ -66,23 +75,29 @@
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
+
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }
+
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
     }
 </script>
 

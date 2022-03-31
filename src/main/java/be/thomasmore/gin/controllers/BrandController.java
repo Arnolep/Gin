@@ -20,7 +20,7 @@ public class BrandController {
     private final Logger logger = LoggerFactory.getLogger(BrandController.class);
     @Autowired
     private BrandRepository brandRepository;
-    @GetMapping({"/branddetails/{id}", "/branddetails"})
+    @GetMapping({"/branddetails/{id}", "/branddetails", "/brandetails","/brandetails/{id}"})
 
     public String branddetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "branddetails";

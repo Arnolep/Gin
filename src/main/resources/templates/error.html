@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}" href="../static/css.css"/>
+    <title>error</title>
+</head>
+<body>
+<div class="row1">
+    <div class="row1content">
+        <h1 class="errormessage">woops hier ging iets mis</h1>
+    </div>
+</div>
+</body>
+<div class="row1">
+    <div class="row1content">
+        <h3>Terug naar de site? </h3>
+        <div class="list">
+            <a class="buttonLook mediumButton"
+               th:href="@{|/home|}"
+            >Home</a>
+        </div>
+    </div>
+</div>
+</html>
