@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
+
+    <title>brandedit</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Header</div>
+<div class="row1">
+    <div class="row1content" th:if="${brand}">
+        <h2 th:text="*{brand.name}">partydetails</h2>
+        <h3>
+            <a th:href="@{|/branddetails/*{brand.id}|}" th:text="*{brand.name}"
+               class="linkLook">brand</a>
+        </h3>
+        <form th:action="@{|/admin/brandedit/*{id}|}" method="post">
+            <div class="venueinfo">
+            <div class="infoLine">
+                <label for="brandName" class="infoLineName">Merk: </label>
+                <input id="brandName" th:field="*{brand.name}" class="infoLineValue">
+            </div>
+            <div class="infoLine">
+                <label for="brandDescription" class="infoLineName">Beschrijving: </label>
+                <input id="brandDescription" th:field="*{brand.description}" class="infoLineValue">
+            </div>
+<!--            <div class="freespaceforheader"></div>-->
+            <div class="infoLine">
+                <a th:href="@{|/branddetails/*{id}|}" class="buttonLook editButton">cancel</a>
+                <input type="submit" value="save" class="buttonLook editButton">
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

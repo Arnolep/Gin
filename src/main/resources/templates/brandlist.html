@@ -9,6 +9,9 @@
 <div th:replace="fragments/header :: header">Header</div>
 <div class="row1">
     <div class="row1content">
+        <div class="editButtonDiv">
+            <a th:href="@{|/admin/brandnew|}" class="buttonLook smallButton">New</a>
+        </div>
         <h2>Merken</h2>
         <div th:unless="${showFilters==true}" class="filters">
             <a class="buttonLook filterButton" th:href="@{/brandlist/filter}">filter</a>

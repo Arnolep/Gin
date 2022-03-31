@@ -15,6 +15,9 @@
         <div class="nextButtonDiv">
             <a class="buttonLook smallButton" th:href="@{|/branddetails/${brand.id}/next|}">&gt;</a>
         </div>
+        <div class="editButtonDiv">
+            <a th:href="@{|/admin/brandedit/*{id}|}" class="buttonLook smallButton">edit</a>
+        </div>
 
         <h2 th:text="${brand.getName}">branddetails</h2>
 
@@ -41,10 +44,9 @@
     <div class="row1content">
         <h3>Terug naar overzicht? </h3>
         <div class="list">
-<a class="buttonLook mediumButton"
-   th:href="@{|/brandlist|}"
->Merken</a>
-    </div>
+            <a class="buttonLook mediumButton"
+               th:href="@{|/brandlist|}">Merken</a>
+        </div>
     </div>
 </div>
 <div class="row1">

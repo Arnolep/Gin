@@ -1,12 +1,11 @@
 package be.thomasmore.gin.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Brand {
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "brand_generator")
+    @SequenceGenerator(name="brand_generator",sequenceName = "brand_seq",allocationSize = 1)
     @Id
     private Integer id;
     private String name;
