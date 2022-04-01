@@ -116,7 +116,9 @@ box-shadow: 3px 4px 5px darkgrey;
     background-color: #a4caf3;
     color: #EDC7CF;
 }
-
+.ExtraInfo {
+    font-size: small;
+}
 
 a.mediumButton {
     display: block;
