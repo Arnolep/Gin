@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 import java.util.Optional;
 
-public interface ReceptRepository extends CrudRepository<Recept,Double> {
+public interface ReceptRepository extends CrudRepository<Recept,Integer> {
     @Query("SELECT r FROM Recept r WHERE " +
             "(:minPrice IS NULL OR :minPrice <= r.price) AND " +
             "(:maxPrice IS NULL OR r.price <= :maxPrice)")

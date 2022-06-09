@@ -30,35 +30,33 @@
         </div>
 
 
-
-
-<div class="row1">
-    <div class="row1content">
-        <h3>Voorgestelde cocktail? </h3>
-        <div class="list">
-            <div th:each="recept:${brand.recept}">
-                <a class="buttonLook mediumButton" th:href="@{|/receptdetails1/${recept.id}|}">
-                    <span th:text="${recept.name}">recept name </span>
-                </a>
+        <div class="row1">
+            <div class="row1content">
+                <h3>Voorgestelde cocktail? </h3>
+                <div class="list">
+                    <div th:each="recept:${brand.recept}">
+                        <a class="buttonLook mediumButton" th:href="@{|/receptdetails1/${recept.id}|}">
+                            <span th:text="${recept.name}">recept name </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row1">
+            <div class="row1content">
+                <h3>Terug naar overzicht? </h3>
+                <div class="list">
+                    <a class="buttonLook smallButton"
+                       th:href="@{|/brandlist|}">Merken</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row1">
-    <div class="row1content">
-        <h3>Terug naar overzicht? </h3>
-        <div class="list">
-            <a class="buttonLook smallButton"
-               th:href="@{|/brandlist|}">Merken</a>
+    <div class="row1">
+        <div class="row1content" th:unless="${brand}">
+            <p>Er is geen merk gekozen</p>
         </div>
     </div>
-</div>
-    </div>
-<div class="row1">
-    <div class="row1content" th:unless="${brand}">
-        <p>Er is geen merk gekozen</p>
-    </div>
-</div>
 </div>
 
 </body>
