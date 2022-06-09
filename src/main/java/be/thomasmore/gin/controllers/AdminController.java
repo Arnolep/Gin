@@ -34,8 +34,8 @@ private BrandRepository brandRepository;
                                 @ModelAttribute("brand") Brand brand) {
         logger.info("brandEditPost " + id + " -- new name= " + brand.getName());
         logger.info("brandEditPost " + id + " -- new description= " + brand.getDescription());
-        logger.info("brandEditPost " + id + " -- new cocktailID= " + brand.getDescription());
-        logger.info("brandEditPost " + id + " -- new introduced= " + brand.getDescription());
+        logger.info("brandEditPost " + id + " -- new introduced= " + brand.getIntroduced());
+        logger.info("brandEditPost " + id + " -- new cocktailID= " + brand.getRecept());
         brandRepository.save(brand);
         return "redirect:/branddetails/" + id;
        }

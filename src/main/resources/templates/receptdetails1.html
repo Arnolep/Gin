@@ -32,13 +32,17 @@
             <div class="infoName">Liquids:</div>
             <div class="infoValue" th:text="${recept.getLiquids()}">liquids</div>
         </div>
+        <div class="info">
+            <div class="infoName">Price:</div>
+            <div class="infoValue" th:text="${recept.getPrice()}">Price</div>
+        </div>
     </div>
 </div>
 <div class="row1">
     <div class="row1content">
         <h3>Terug naar overzicht? </h3>
         <div class="list">
-            <a class="buttonLook smallButton"
+            <a class="buttonLookFilter smallButton"
                th:href="@{|/receptenlist|}"
             >Cocktails</a>
         </div>

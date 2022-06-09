@@ -12,6 +12,7 @@ public class Recept {
     private String Condiments;
     private String BakingAndSpices;
     private String Liquids;
+    private Double price;
     private boolean water;
     private boolean sugar;
 
@@ -19,7 +20,7 @@ public Recept(){
 
 }
 
-    public Recept(Integer id, String name,String produce, String condiments, String bakingAndSpices, String liquids, String others) {
+    public Recept(Integer id, String name,String produce, String condiments, String bakingAndSpices, String liquids) {
         this.id = id;
         this.name = name;
         this.Produce = produce;
@@ -28,6 +29,13 @@ public Recept(){
         this.Liquids = liquids;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public boolean isSugar() {
         return sugar;

@@ -1,5 +1,6 @@
 package be.thomasmore.gin.controllers;
 
+import be.thomasmore.gin.model.Brand;
 import be.thomasmore.gin.model.Recept;
 import be.thomasmore.gin.repositories.ReceptRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +8,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
 public class ReceptController {
-
+    private final Logger logger = LoggerFactory.getLogger(ReceptController.class);
     @Autowired
     private ReceptRepository receptRepository;
 
@@ -68,10 +73,31 @@ public class ReceptController {
 
     @GetMapping({"/receptenlist"})
     public String receptenlist(Model model) {
+        final int averagePrice = receptRepository.getAveragePrice();
+        final int totalPrice = receptRepository.getTotalPrice();
         final Iterable<Recept> allRecepten = receptRepository.findAll();
-        model.addAttribute("recepten", allRecepten);
+        model.addAttribute("averagePrice", averagePrice);
+        model.addAttribute("totalPrice", totalPrice);
+        model.addAttribute("recepts", allRecepten);
         return "receptenlist";
     }
+    @GetMapping({"/receptenlist/filter"})
+    public String receptenListWithFilter(Model model,
+                                      @RequestParam(required = false) Double minPrice,
+                                      @RequestParam(required = false) Double maxPrice) {
+        logger.info(String.format("receptenListWithFilter -- min=%b, max=%b", minPrice, maxPrice));
 
+        List<Recept> recepts = receptRepository.findByFilter(minPrice, maxPrice);
+        final int averagePrice = receptRepository.getAveragePrice();
+        final int totalPrice = receptRepository.getTotalPrice();
+        model.addAttribute("averagePrice", averagePrice);
+        model.addAttribute("totalPrice", totalPrice);
+        model.addAttribute("recepts", recepts);
+        model.addAttribute("minPrice", minPrice);
+        model.addAttribute("maxPrice", maxPrice);
+        model.addAttribute("showFilters", true);
+
+        return "receptenlist";
+    }
 }
 

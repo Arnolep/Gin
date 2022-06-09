@@ -10,17 +10,17 @@
 <div class="row1">
     <div class="row1content">
         <div class="editButtonDivNew">
-            <a th:href="@{|/admin/brandnew|}" class="buttonLook smallButton">New</a>
+            <a th:href="@{|/admin/brandnew|}" class="buttonLookFilter smallButton">New</a>
         </div>
         <h2>Merken</h2>
         <div th:unless="${showFilters==true}" class="filters">
-            <a class="buttonLook filterButton" th:href="@{/brandlist/filter}">filter</a>
+            <a class="buttonLookFilter filterButton" th:href="@{/brandlist/filter}">filter</a>
         </div>
         <div th:if="${showFilters==true}" class="filters">
-            <a class="buttonLook filterButton" th:href="@{/brandlist}">-</a>
+            <a class="buttonLookFilter filterButton" th:href="@{/brandlist}">-</a>
             <form>
                 <div class="onefilter">
-                    <input type="submit" value="search" class="buttonLook filterButton">
+                    <input type="submit" value="search" class="buttonLookFilter filterButton">
                 </div>
                 <div class="filters">
                     <div class="filtername">Geintroduceerd</div>
@@ -39,14 +39,13 @@
                 </div>
             </form>
         </div>
-        <div th:each="brand: ${brands}">
-            <a class="buttonLook mediumButton"
+        <div style="justify-content: center" th:each="brand: ${brands}">
+            <a class="buttonLookFilter mediumButton"
                th:href="@{|/branddetails/${brand.id}|}"
                th:text="${brand.Name}">brand name</a>
         </div>
     </div>
 </div>
-</div>
-</div>
+
 </body>
 </html>
