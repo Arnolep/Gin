@@ -30,4 +30,6 @@ public interface ReceptRepository extends CrudRepository<Recept,Double> {
     Iterable<Recept> findByWater(boolean yes);
 
     Iterable<Recept> findBySugar(boolean yes);
+
+    Optional<Recept> findById(Integer id);
 }

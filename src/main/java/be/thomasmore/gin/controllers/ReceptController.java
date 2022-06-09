@@ -26,7 +26,7 @@ public class ReceptController {
     public String receptdetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "receptdetails1";
 
-        Optional<Recept> receptFromDb = receptRepository.findById(Double.valueOf(id));
+        Optional<Recept> receptFromDb = receptRepository.findById(id);
         if (receptFromDb.isPresent()) {
             model.addAttribute("recept", receptFromDb.get());
         }
@@ -88,7 +88,10 @@ public class ReceptController {
         logger.info(String.format("receptenListWithFilter -- min=%b, max=%b", minPrice, maxPrice));
 
         List<Recept> recepts = receptRepository.findByFilter(minPrice, maxPrice);
-
+        final int averagePrice = receptRepository.getAveragePrice();
+        final int totalPrice = receptRepository.getTotalPrice();
+        model.addAttribute("averagePrice", averagePrice);
+        model.addAttribute("totalPrice", totalPrice);
         model.addAttribute("recepts", recepts);
         model.addAttribute("minPrice", minPrice);
         model.addAttribute("maxPrice", maxPrice);

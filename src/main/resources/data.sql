@@ -5,7 +5,7 @@ VALUES (2,'Grapefruit Gin Cocktail','Grapefruit Slice','1 oz Simple Syrup , 3 oz
 INSERT INTO RECEPT (ID,NAME,PRODUCE,CONDIMENTS,BAKING_AND_SPICES,LIQUIDS,PRICE,WATER,SUGAR)
 VALUES (3,'Classic French 75 Cocktail','1 lemon peel','3/4oz Lemon juice , 3/4 oz Simple syrup','1/4 cup Honey or sugar','2 oz Champagne & 1/2oz Gin',12,false,false);
 INSERT INTO RECEPT (ID,NAME,PRODUCE,CONDIMENTS,BAKING_AND_SPICES,LIQUIDS,PRICE,WATER,SUGAR)
-VALUES (4,'Matcha pina colada','Bar spoon matcha tea , 1 Lemon round or 1/2 orange round','1oz fresh pineapple juice , 1/3oz fresh lemon juice & 2oz coconut milk','1/4 cup Sugar','2oz Gin & 4/3oz water',null,true,true);
+VALUES (4,'Matcha pina colada','Bar spoon matcha tea , 1 Lemon round or 1/2 orange round','1oz fresh pineapple juice , 1/3oz fresh lemon juice & 2oz coconut milk','1/4 cup Sugar','2oz Gin & 4/3oz water',16,true,true);
 
 INSERT INTO BRAND (ID,NAME,INTRODUCED,DESCRIPTION,recept_id)
 VALUES (nextval('BRAND_SEQ'),'Beefeater: Beste goedkope gin',1671,'De delicate smaakcombinatie maakt het mogelijk om puur van Beefeater gin te genieten, al raad ik aan hem te mengen in een cocktail. Hij bevat een geurige mix van onder meer engelwortel en -zaad, jeneverbes, korianderzaad, amandelen, zoethout, Sevilla-sinaasappelen, citroenschil en orriswortel.',4);
