@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
     <title>Merken</title>
 </head>
 <body>
+<div class="banner">
 <div th:replace="fragments/header :: header">Header</div>
 <div class="row1">
     <div class="row1content">
         <div class="editButtonDivNew">
-            <a th:href="@{|/admin/brandnew|}" class="buttonLookFilter smallButton">New</a>
+            <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/brandnew|}" class="buttonLookFilter smallButton">New</a>
         </div>
         <h2>Merken</h2>
         <div th:unless="${showFilters==true}" class="filters">
@@ -40,11 +41,12 @@
             </form>
         </div>
         <div style="justify-content: center" th:each="brand: ${brands}">
-            <a class="buttonLookFilter mediumButton"
+            <h3><a class="buttonLookFilter mediumButton"
                th:href="@{|/branddetails/${brand.id}|}"
-               th:text="${brand.Name}">brand name</a>
+               th:text="${brand.Name}">brand name</a></h3>
         </div>
     </div>
+</div>
 </div>
 
 </body>

@@ -52,12 +52,15 @@ a {
 .freespaceforheader {
     margin: 150px 0 20px 0;
 }
+
 .menubuttons {
     display: flex;
 }
+
 .list {
     float: left;
 }
+
 .row1 {
     display: flex;
     position: relative;
@@ -94,40 +97,77 @@ a {
 }
 
 .filtername {
+    color: white;
     width: 4em;
     text-align: left;
 }
 
 .buttonLookFilter {
+    background-color: black;
     border: black solid 2px;
-    color: black;
+    color: white;
     text-decoration: none;
     text-align: center;
     box-shadow: 1px 1px 1px darkgrey;
 }
+
 .buttonLook {
     background-color: #a4caf3;
-    color: #6A8E7F;}
+    color: #6A8E7F;
+}
 
 
 .buttonLookFilter:hover {
-    background-color: blue;
+    background-color: grey;
     color: white;
     box-shadow: 3px 4px 5px darkgrey;
 }
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://t3.ftcdn.net/jpg/01/62/80/10/360_F_162801080_3NGFixTcUYa0d7YIqq4tzDouCISL8Hz1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    margin-top: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    font-weight: 100;
+    line-height: 25px;
+    margin: 20px auto;
+}
+
 .buttonLook:hover {
     background-color: #a4caf3;
     color: black;
     box-shadow: 3px 4px 5px darkgrey;
 }
+
 .buttonLookFilter:active {
     background-color: #E2ED8C;
     color: white;
 }
+
 .buttonLook:active {
     background-color: #a4caf3;
     color: #EDC7CF;
 }
+
 .ExtraInfo {
     font-size: small;
 }
@@ -140,7 +180,11 @@ a.mediumButton {
     font-size: 1.2em;
     padding: 1em;
 }
-
+.favlist{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
 a.smallButton {
     display: block;
     font-size: 1em;
@@ -148,15 +192,18 @@ a.smallButton {
 }
 
 a.menuButton {
-    border: white solid 2px;
+    border: white solid 1px;
     margin: 0 10px;
     width: 8em;
     padding: 0.2em;
     text-align: center;
 
 }
+h2{
+    color: white;
+}
 a.homeButton {
-    border: white solid 2px;
+    border: white solid 1px;
     margin: 0 10px 0 410px;
     width: 8em;
     padding: 0.2em;
@@ -169,6 +216,7 @@ a.homeButton {
     border: none;
     font-size: medium;
 }
+
 a.activeFilter {
     background-color: #a4caf3;
     color: #2b3e35;
@@ -184,19 +232,26 @@ a.activeFilter {
     width: 5em;
     display: inline-block;
 }
-.editButtonDivNew{
+
+.editButtonDivNew {
     position: absolute;
     right: 5px;
-    top:48px
+    top: 48px
 }
+
 .info {
     margin: 15px 0;
     font-size: 1em;
     display: flex;
+
+}
+h3{
+    color: white;
 }
 .infoName {
     margin: 15px 5px;
     width: 13em;
+    color: white;
 }
 
 .infoValue {
@@ -204,23 +259,28 @@ a.activeFilter {
     margin: 15px 5px;
     text-align: left;
     max-width: 50%;
+    color: white;
 }
-.foto{
+
+.foto {
     float: left;
     width: 23%;
 
 }
-.foto2{
+
+.foto2 {
     float: right;
     width: 23%;
     margin-right: 0;
 }
-.abouttext{
+
+.abouttext {
     margin-left: 2.5%;
     width: 49%;
-    border: 5px solid black;
+    border: 5px solid white;
     text-align: center;
     float: left;
+    color: white;
 }
 
 .prevButtonDiv {
@@ -238,50 +298,51 @@ a.activeFilter {
 
 .editButtonDiv {
     position: absolute;
-    top:48px
+    top: 48px
 }
 
 
-.errormessage{
+.errormessage {
     float: left;
 }
-/*.courseContainer .row {*/
-/*margin-left: 50%;*/
 
-/*}*/
-/*.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {*/
-/*    width: 100%;*/
-/*    margin-right: auto;*/
-/*    margin-left: auto*/
-/*}*/
-/*.courseContainer {*/
-/*    justify-content: center;*/
-/*}*/
-/*.courselistitem {*/
-/*    text-align: center;*/
-/*    background: #E2ED8C;*/
-/*    margin: 10px;*/
-/*    padding: 5px 5px;*/
-/*    width: 140px;*/
-/*    height: 100%;*/
-/*    display: inline-block;*/
-/*    border: white solid 2px;*/
-/*}*/
-/*.courselistitem a {*/
-/*    text-decoration: none;*/
-/*}*/
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-/*.coursetext {*/
-/*    color: black;*/
-/*    text-decoration: none;*/
-/*}*/
+}
 
+.socials li {
+    margin-right: 10px;
+}
 
-/*.coursename {*/
-/*    text-decoration: none;*/
-/*    font-family: bebas-neue, sans-serif;*/
-/*    font-size: 2em;*/
-/*    color: #619095;*/
-/*}*/
+.fa-facebook {
+    color: white;
+}
+
+.fa-instagram {
+    color: white;
+}
+
+.fa-youtube {
+    color: white;
+}
+
+.socials a {
+    text-decoration: none;
+    color: black;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.socials a i {
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+
 
 

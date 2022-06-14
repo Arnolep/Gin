@@ -2,6 +2,8 @@ package be.thomasmore.gin.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Collection;
 
 @Entity
 public class Recept {
@@ -14,6 +16,8 @@ public class Recept {
     private String Liquids;
     private Double price;
     private boolean water;
+    @ManyToMany(mappedBy = "favorites")
+    Collection<User> users;
     private boolean sugar;
 
 public Recept(){
@@ -31,6 +35,14 @@ public Recept(){
 
     public Double getPrice() {
         return price;
+    }
+
+    public Collection<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Collection<User> users) {
+        this.users = users;
     }
 
     public void setPrice(Double price) {

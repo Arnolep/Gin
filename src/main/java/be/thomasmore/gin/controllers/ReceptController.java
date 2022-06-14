@@ -1,8 +1,9 @@
 package be.thomasmore.gin.controllers;
 
-import be.thomasmore.gin.model.Brand;
 import be.thomasmore.gin.model.Recept;
+import be.thomasmore.gin.model.User;
 import be.thomasmore.gin.repositories.ReceptRepository;
+import be.thomasmore.gin.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,10 +24,27 @@ public class ReceptController {
     private final Logger logger = LoggerFactory.getLogger(ReceptController.class);
     @Autowired
     private ReceptRepository receptRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-    @GetMapping({"/receptdetails1/{id}", "/receptdetails1","/recepdetails1/{id}","/recepdetails1"})
+    @GetMapping({"/receptdetails1/{id}", "/receptdetails1", "/recepdetails1/{id}", "/recepdetails1"})
 
-    public String receptdetails(Model model, @PathVariable(required = false) Integer id) {
+    public String receptdetails(Model model, @PathVariable(required = false) Integer id, Principal principal) {
+        if (principal==null)
+        {
+            return "redirect:/login";
+        }
+        logger.info("activeUser="+principal.getName());
+        Optional<User> activeUserOptional = userRepository.findUserByUsername(principal.getName());
+
+        if(activeUserOptional.isEmpty())
+        {
+            return "redirect:/login";
+        }
+
+        User activeUser=activeUserOptional.get();
+        model.addAttribute("favoritelist", activeUser.getFavorites());
+
         if (id == null) return "receptdetails1";
 
         Optional<Recept> receptFromDb = receptRepository.findById(id);
@@ -31,6 +52,35 @@ public class ReceptController {
             model.addAttribute("recept", receptFromDb.get());
         }
         return "receptdetails1";
+    }
+
+    @GetMapping("receptfavorite/{id}")
+    public String receptfavorite(Model model, @PathVariable int id, Principal principal) {
+        if (principal == null) {
+            return "redirect:/login";
+        }
+        logger.info("activeUser=" + principal.getName());
+        Optional<User> activeUserOptional = userRepository.findUserByUsername(principal.getName());
+
+        if (activeUserOptional.isEmpty()) {
+            return "redirect:/login";
+        }
+
+        User activeUser = activeUserOptional.get();
+
+        Optional<Recept> favorite = receptRepository.findById(id);
+
+        Collection<Recept> favorites = activeUser.getFavorites();
+
+        if (!favorites.contains(favorite.get())) {
+            favorites.add(favorite.get());
+        }
+        model.addAttribute("favoritelist", favorites.stream().toList());
+
+        activeUser.setFavorites(favorites);
+        userRepository.save(activeUser);
+        return "redirect:/receptdetails1/" + id;
+
     }
 
     @GetMapping({"/receptdetails1/{id}/prev"})
@@ -81,10 +131,11 @@ public class ReceptController {
         model.addAttribute("recepts", allRecepten);
         return "receptenlist";
     }
+
     @GetMapping({"/receptenlist/filter"})
     public String receptenListWithFilter(Model model,
-                                      @RequestParam(required = false) Double minPrice,
-                                      @RequestParam(required = false) Double maxPrice) {
+                                         @RequestParam(required = false) Double minPrice,
+                                         @RequestParam(required = false) Double maxPrice) {
         logger.info(String.format("receptenListWithFilter -- min=%b, max=%b", minPrice, maxPrice));
 
         List<Recept> recepts = receptRepository.findByFilter(minPrice, maxPrice);

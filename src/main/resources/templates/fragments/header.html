@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>header</title>
@@ -7,15 +10,21 @@
 <body>
 <div th:fragment="header">
     <div class="menu">
-    <h1 style="color: white">GIN</h1>
-    <div class="menubuttons">
-        <a style="color: white;background-color: black" class="buttonLook homeButton" th:href="@{/home}">Home</a>
-        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/receptenlist}">Cocktails</a>
-        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/brandlist}">Merken</a>
-        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/slideshow}">Slideshow</a>
-        <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/about}">About</a>
+        <a th:href="@{/home}">
+            <h1 style="color: white">GIN</h1>
+        </a>
+        <div class="menubuttons">
+            <a style="color: white;background-color: black" class="buttonLook homeButton" th:href="@{/home}">Home</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/receptenlist}">Cocktails</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton"
+               th:href="@{/brandlist}">Merken</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/slideshow}">Slideshow</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/about}">About</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/logout}"
+               sec:authorize="isAuthenticated()">Logout</a>
+        </div>
     </div>
-</div>
     <div class="freespaceforheader"></div>
 </div>
 </body>

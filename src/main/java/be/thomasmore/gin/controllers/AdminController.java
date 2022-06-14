@@ -52,4 +52,5 @@ private BrandRepository brandRepository;
         Brand newBrand = brandRepository.save(brand);
         return "redirect:/branddetails/" + newBrand.getId();
     }
+
 }
