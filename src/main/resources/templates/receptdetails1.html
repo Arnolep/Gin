@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}" href="../static/css.css"/>
@@ -37,13 +37,13 @@
             <div class="infoName">Price:</div>
             <div class="infoValue" th:text="${recept.getPrice()}">Price</div>
         </div>
-        <button class="buttonLookFilter smallButton">
+        <button sec:authorize="isAuthenticated()" class="buttonLookFilter smallButton">
             <a th:href="@{|/receptfavorite/${recept.id}|}"><p>add to favorite</p></a>
         </button>
     </div>
 </div>
 
-    <div class="favlist col-12 col-sm-3 col-lg-12" th:each="favorite: ${favoritelist}">
+    <div class="favlist col-12 col-sm-3 col-lg-12" sec:authorize="isAuthenticated()" th:each="favorite: ${favoritelist}">
         <button class="buttonLookFilter mediumButton fav">
             <a th:href="@{|/receptdetails1/${favorite.id}|}"> <h3><span  th:text="${favorite.Name}">favorite name</span></h3></a>
         </button>
