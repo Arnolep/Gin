@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Home</title>
 </head>
 <body>
-
-<div th:replace="fragments/header :: header">Header</div>
 <div class="banner">
+<div th:replace="fragments/header :: header">Header</div>
+
 <div class="row1">
-    <img th:src="@{/img/best-gin-brands-luxe-digital.jpg.webp}"
-         src="../static/img/best-gin-brands-luxe-digital.jpg.webp" alt="Gin" height="491" width="60%"
-         style="margin-left: 19%;margin-right: 19%"/>
+<div class="content">
+    <h1>WELCOME</h1>
+    <p>Op deze website vind u alles over Gin: recepten, bekende merken en de geschiedenis</p>
+    <br>
+    <ul class="socials">
+        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+    </ul>
+</div>
 </div>
 </div>
 </body>

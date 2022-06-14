@@ -59,6 +59,7 @@
     </style>
 </head>
 <body>
+<div class="banner">
 <div th:replace="fragments/header :: header">Header</div>
 <img class="foto" th:src="@{/img/historyofgin3.jpg}" src="../static/img/historyofgin3.jpg">
 <div class="slideshow-container">
@@ -98,6 +99,7 @@
     <span class="dot" onclick="currentSlide(5)"></span>
     <span class="dot" onclick="currentSlide(6)"></span>
 </div>
+
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
@@ -126,6 +128,6 @@
         dots[slideIndex - 1].className += " active";
     }
 </script>
-
+</div>
 </body>
 </html>

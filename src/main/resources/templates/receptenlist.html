@@ -9,13 +9,14 @@
     <title>Cocktails</title>
 </head>
 <body>
+<div class="banner">
 <div th:replace="fragments/header :: header">Header</div>
 <div class="row1">
     <div class="row1content">
         <div class="col-lg-2 containerFilter">
             <h2>Cocktails</h2>
-            <div th:text="|${averagePrice} Gemiddelde prijs:|">avrage</div>
-            <div th:text="|${totalPrice} Totale prijs:|">total</div>
+            <div style="color: white" th:text="|Gemiddelde prijs: ${averagePrice} euro|">avrage</div>
+            <div style="color: white" th:text="|Totale prijs: ${totalPrice} euro|">total</div>
             <div th:unless="${showFilters==true}" class="filters">
                 <a class="buttonLookFilter filterButton" th:href="@{/receptenlist/filter}">filter</a>
             </div>
@@ -54,9 +55,9 @@
                 <div>
                     <div class="col-12 col-sm-3 col-lg-12" th:each="recept: ${recepts}">
                         <a class="buttonLookFilter mediumButton" th:href="@{|/receptdetails1/${recept.getId()}|}">
-                            <span th:text="${recept.Name}">brand name</span>
+                            <h3><span th:text="${recept.Name}">brand name</span></h3>
                             <br>
-                            <div th:if="${recept.price}" th:text="|price ${recept.price}|">price
+                            <div th:if="${recept.price}" th:text="|price ${recept.price}|">prijs op café:
                             </div>
 
                         </a>
@@ -65,6 +66,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>
