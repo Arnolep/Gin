@@ -14,10 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class ReceptController {
@@ -30,20 +27,21 @@ public class ReceptController {
     @GetMapping({"/receptdetails1/{id}", "/receptdetails1", "/recepdetails1/{id}", "/recepdetails1"})
 
     public String receptdetails(Model model, @PathVariable(required = false) Integer id, Principal principal) {
-        if (principal==null)
-        {
-            return "redirect:/login";
+        boolean loggedin = true;
+        if (principal == null ) {
+            loggedin = false;
         }
-        logger.info("activeUser="+principal.getName());
-        Optional<User> activeUserOptional = userRepository.findUserByUsername(principal.getName());
+        if (loggedin) {
+            logger.info("activeUser=" + principal.getName());
+            Optional<User> activeUserOptional = userRepository.findUserByUsername(principal.getName());
 
-        if(activeUserOptional.isEmpty())
-        {
-            return "redirect:/login";
+            if (activeUserOptional.isEmpty()) {
+                return "redirect:/user/login";
+            }
+
+            User activeUser = activeUserOptional.get();
+            model.addAttribute("favoritelist", activeUser.getFavorites());
         }
-
-        User activeUser=activeUserOptional.get();
-        model.addAttribute("favoritelist", activeUser.getFavorites());
 
         if (id == null) return "receptdetails1";
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
+    <title>login</title>
+</head>
+<body>
+<div class="banner">
+<div th:replace="fragments/header"></div>
+    <div class="row1">
+    <div class="logincontainer">
+        <p style="color: white" class="dialog_title">INLOGGEN</p>
+        <div class="venueinfo">
+            <form class="form_login" th:action="@{|/user/login|}" method="post">
+                <div class="input_container">
+                    <label style="color: white" class="infoLineName" for="username">Naam: </label>
+                    <input class="infoLineValue" id="username" name="username" type="text" required>
+                </div>
+                <div class="input_container">
+                    <label style="color: white" class="infoLineName" for="password">Wachtwoord: </label>
+                    <input class="infoLineValue" id="password" name="password" type="password" required>
+                </div>
+                <div class="input_container submit_container">
+                    <input class="submit_button" type="submit" value="Login">
+                </div>
+            </form>
+            <div class="logincontainer">
+                <h3 style="margin-bottom: 15px">Nog geen acount? </h3>
+                <div class="list">
+                    <a class="buttonLookFilter smallButton"
+                       th:href="@{|/user/register|}"
+                    >registreren</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

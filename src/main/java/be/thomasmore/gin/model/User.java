@@ -12,7 +12,6 @@ import java.util.List;
         @GeneratedValue(generator = "user_seq")
         private Integer id;
         private String username;
-        private String email;
         private String password;
         private String role;
 
@@ -26,7 +25,6 @@ import java.util.List;
     public User(Integer id, String username, String email, String password, String role, Collection<Recept> favorites) {
         this.id = id;
         this.username = username;
-        this.email = email;
         this.password = password;
         this.role = role;
         this.favorites = favorites;
@@ -46,14 +44,6 @@ import java.util.List;
 
         public void setId(Integer id) {
             this.id = id;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
         }
 
         public String getPassword() {

@@ -55,6 +55,7 @@ a {
 
 .menubuttons {
     display: flex;
+    justify-content: center;
 }
 
 .list {
@@ -157,7 +158,10 @@ a {
     color: black;
     box-shadow: 3px 4px 5px darkgrey;
 }
+.logincontainer{
+    justify-content: center;
 
+}
 .buttonLookFilter:active {
     background-color: #E2ED8C;
     color: white;
@@ -177,8 +181,17 @@ a.mediumButton {
     margin: 10px auto;
     height: 100px;
     width: 400px;
+    border: cornflowerblue solid 2px;;
     font-size: 1.2em;
     padding: 1em;
+}
+.input_container{
+    margin-bottom: 30px;
+}
+a.mediumButton:hover{
+    background-color: cornflowerblue;
+    color: white;
+    box-shadow: 3px 4px 5px grey;
 }
 .favlist{
     margin-top: 20px;
@@ -199,15 +212,11 @@ a.menuButton {
     text-align: center;
 
 }
+a.menuButton:hover{
+    box-shadow: 3px 4px 5px cornflowerblue;
+}
 h2{
     color: white;
-}
-a.homeButton {
-    border: white solid 1px;
-    margin: 0 10px 0 410px;
-    width: 8em;
-    padding: 0.2em;
-    text-align: center;
 }
 
 .filterButton {
@@ -249,16 +258,17 @@ h3{
     color: white;
 }
 .infoName {
+    font-size: 1.2em;
     margin: 15px 5px;
     width: 13em;
     color: white;
 }
 
 .infoValue {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 15px 5px;
     text-align: left;
-    max-width: 50%;
+    max-width: 30%;
     color: white;
 }
 
@@ -297,8 +307,9 @@ h3{
 }
 
 .editButtonDiv {
-    position: absolute;
-    top: 48px
+    position: fixed;
+    left: 10px;
+    top: 240px
 }
 
 

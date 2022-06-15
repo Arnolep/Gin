@@ -56,7 +56,7 @@
                         <a class="buttonLookFilter mediumButton" th:href="@{|/receptdetails1/${recept.getId()}|}">
                             <h3><span th:text="${recept.Name}">brand name</span></h3>
                             <br>
-                            <div th:if="${recept.price}" th:text="|price ${recept.price}|">prijs op café:
+                            <div th:if="${recept.price}" th:text="|prijs op café: ${recept.price}|">
                             </div>
 
                         </a>

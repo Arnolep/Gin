@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css.css}"/>
+    <title>Logout</title>
+</head>
+<body>
+<div class="banner">
+<div th:replace="fragments/header"></div>
+<div class="row1">
+    <div class="logincontainer">
+        <p style="color: white" class="dialog_title">UITLOGGEN?</p>
+        <div class="venueinfo">
+            <p style="color: white" class="dialog_text">Ben je zeker dat je wilt uitloggen?</p>
+            <form th:action="@{|/user/logout|}" method="post">
+                <input class="submit_button" type="submit" value="Log mij uit">
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -11,17 +11,17 @@
 <div th:fragment="header">
     <div class="menu">
         <a th:href="@{/home}">
-            <h1 style="color: white">GIN</h1>
+            <h1 style="color: white ; justify-content: center">GIN</h1>
         </a>
         <div class="menubuttons">
-            <a style="color: white;background-color: black" class="buttonLook homeButton" th:href="@{/home}">Home</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/home}">Home</a>
             <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/receptenlist}">Cocktails</a>
             <a style="color: white;background-color: black" class="buttonLook menuButton"
                th:href="@{/brandlist}">Merken</a>
             <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/slideshow}">Slideshow</a>
             <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/about}">About</a>
-            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
-            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/logout}"
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/user/login}" sec:authorize="isAnonymous()">Login</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/user/logout}"
                sec:authorize="isAuthenticated()">Logout</a>
         </div>
     </div>

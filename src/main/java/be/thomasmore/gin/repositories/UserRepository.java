@@ -10,4 +10,5 @@ public interface UserRepository extends CrudRepository<User,Integer> {
     @Query("select u from User u where u.username=:name")
     Optional<User> findUserByUsername(String name);
 
+
 }
