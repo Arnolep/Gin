@@ -7,58 +7,59 @@
 </head>
 <body>
 <div class="banner">
-<div th:replace="fragments/header :: header">Header</div>
-<div class="row1">
-    <div class="row1content" th:if="${brand}">
-        <div class="prevButtonDiv">
-            <a class="buttonLookFilter smallButton" th:href="@{|/branddetails/${brand.id}/prev|}">&lt;</a>
-        </div>
-        <div class="nextButtonDiv">
-            <a class="buttonLookFilter smallButton" th:href="@{|/branddetails/${brand.id}/next|}">&gt;</a>
-        </div>
-        <div class="editButtonDiv">
-            <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/brandedit/*{id}|}" class="buttonLookFilter smallButton">edit</a>
-        </div>
+    <div th:replace="fragments/header :: header">Header</div>
+    <div class="row1">
+        <div class="row1content" th:if="${brand}">
+            <div class="prevButtonDiv">
+                <a class="buttonLookFilter smallButton" th:href="@{|/branddetails/${brand.id}/prev|}">&lt;</a>
+            </div>
+            <div class="nextButtonDiv">
+                <a class="buttonLookFilter smallButton" th:href="@{|/branddetails/${brand.id}/next|}">&gt;</a>
+            </div>
+            <div class="editButtonDiv">
+                <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/brandedit/*{id}|}"
+                   class="buttonLookFilter smallButton">edit</a>
+            </div>
 
-        <h2 th:text="${brand.getName}">branddetails</h2>
-        <div class="info">
-            <div class="infoName">Geïntroduceerd:</div>
-            <div class="infoValue" th:text="${brand.getIntroduced()}">geïntroduceerd</div>
-        </div>
-        <div class="info">
-            <div class="infoName">Omschrijving:</div>
-            <div class="infoValue" th:text="${brand.getDescription()}">omschrijving</div>
-        </div>
+            <h2 th:text="${brand.getName}">branddetails</h2>
+            <div class="info">
+                <div class="infoName">Geïntroduceerd:</div>
+                <div class="infoValue" th:text="${brand.getIntroduced()}">geïntroduceerd</div>
+            </div>
+            <div class="info">
+                <div class="infoName">Omschrijving:</div>
+                <div class="infoValue" th:text="${brand.getDescription()}">omschrijving</div>
+            </div>
 
 
-        <div class="row1">
-            <div class="row1content">
-                <h3>Voorgestelde cocktail? </h3>
-                <div class="list">
-                    <div th:each="recept:${brand.recept}">
-                        <a class="buttonLookFilter mediumButton" th:href="@{|/receptdetails1/${recept.id}|}">
-                            <span th:text="${recept.name}">recept name </span>
-                        </a>
+            <div class="row1">
+                <div class="row1content">
+                    <h3>Voorgestelde cocktail? </h3>
+                    <div class="list">
+                        <div th:each="recept:${brand.recept}">
+                            <a class="buttonLookFilter mediumButton" th:href="@{|/receptdetails1/${recept.id}|}">
+                                <span th:text="${recept.name}">recept name </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="row1content">
+                    <h3>Terug naar overzicht? </h3>
+                    <div class="list">
+                        <a class="buttonLookFilter smallButton"
+                           th:href="@{|/brandlist|}">Merken</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row1">
-            <div class="row1content">
-                <h3>Terug naar overzicht? </h3>
-                <div class="list">
-                    <a class="buttonLookFilter smallButton"
-                       th:href="@{|/brandlist|}">Merken</a>
-                </div>
+            <div class="row1content" th:unless="${brand}">
+                <p>Er is geen merk gekozen</p>
             </div>
         </div>
     </div>
-    <div class="row1">
-        <div class="row1content" th:unless="${brand}">
-            <p>Er is geen merk gekozen</p>
-        </div>
-    </div>
-</div>
 </div>
 </body>
 </html>

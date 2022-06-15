@@ -20,7 +20,8 @@
                th:href="@{/brandlist}">Merken</a>
             <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/slideshow}">Slideshow</a>
             <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/about}">About</a>
-            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/user/login}" sec:authorize="isAnonymous()">Login</a>
+            <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/user/login}"
+               sec:authorize="isAnonymous()">Login</a>
             <a style="color: white;background-color: black" class="buttonLook menuButton" th:href="@{/user/logout}"
                sec:authorize="isAuthenticated()">Logout</a>
         </div>

@@ -7,15 +7,15 @@
 </head>
 <body>
 <div class="banner">
-<div th:replace="fragments/header"></div>
-<div class="row1">
-    <div class="logincontainer">
+    <div th:replace="fragments/header"></div>
+    <div class="row1">
         <div class="logincontainer">
-            <p style="color:white;" class="dialog_text">Registreren is gelukt!</p>
-            <a style="color:white;" class="buttonLookFilter smallButton" th:href="|@{/}|">Ga naar home</a>
+            <div class="logincontainer">
+                <p style="color:white;" class="dialog_text">Registreren is gelukt!</p>
+                <a style="color:white;" class="buttonLookFilter smallButton" th:href="|@{/}|">Ga naar home</a>
+            </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>

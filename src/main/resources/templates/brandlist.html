@@ -7,47 +7,48 @@
 </head>
 <body>
 <div class="banner">
-<div th:replace="fragments/header :: header">Header</div>
-<div class="row1">
-    <div class="row1content">
-        <div class="editButtonDivNew">
-            <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/brandnew|}" class="buttonLookFilter smallButton">New</a>
-        </div>
-        <h2>Merken</h2>
-        <br>
-        <div th:unless="${showFilters==true}" class="filters">
-            <a class="buttonLookFilter filterButton" th:href="@{/brandlist/filter}">filter</a>
-        </div>
-        <div th:if="${showFilters==true}" class="filters">
-            <a class="buttonLookFilter filterButton" th:href="@{/brandlist}">-</a>
-            <form>
-                <div class="onefilter">
-                    <input type="submit" value="search" class="buttonLookFilter filterButton">
-                </div>
-                <div class="filters">
-                    <div class="filtername">Geintroduceerd</div>
+    <div th:replace="fragments/header :: header">Header</div>
+    <div class="row1">
+        <div class="row1content">
+            <div class="editButtonDivNew">
+                <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/brandnew|}"
+                   class="buttonLookFilter smallButton">New</a>
+            </div>
+            <h2>Merken</h2>
+            <br>
+            <div th:unless="${showFilters==true}" class="filters">
+                <a class="buttonLookFilter filterButton" th:href="@{/brandlist/filter}">filter</a>
+            </div>
+            <div th:if="${showFilters==true}" class="filters">
+                <a class="buttonLookFilter filterButton" th:href="@{/brandlist}">-</a>
+                <form>
                     <div class="onefilter">
-                        <label for="minIntroduced" class="filtername">ten vroegste</label>
-                        <input type="number" id="minIntroduced" name="minIntroduced" th:value="${minIntroduced}"
-                               value="0"
-                               step="100">
+                        <input type="submit" value="search" class="buttonLookFilter filterButton">
                     </div>
-                    <div class="onefilter">
-                        <label for="maxIntroduced" class="filtername">ten laatste</label>
-                        <input type="number" id="maxIntroduced" name="maxIntroduced" th:value="${maxIntroduced}"
-                               value="2030"
-                               step="100">
+                    <div class="filters">
+                        <div class="filtername">Geintroduceerd</div>
+                        <div class="onefilter">
+                            <label for="minIntroduced" class="filtername">ten vroegste</label>
+                            <input type="number" id="minIntroduced" name="minIntroduced" th:value="${minIntroduced}"
+                                   value="0"
+                                   step="100">
+                        </div>
+                        <div class="onefilter">
+                            <label for="maxIntroduced" class="filtername">ten laatste</label>
+                            <input type="number" id="maxIntroduced" name="maxIntroduced" th:value="${maxIntroduced}"
+                                   value="2030"
+                                   step="100">
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
-        <div style="justify-content: center" th:each="brand: ${brands}">
-            <h3><a class="buttonLookFilter mediumButton"
-               th:href="@{|/branddetails/${brand.id}|}"
-               th:text="${brand.Name}">brand name</a></h3>
+                </form>
+            </div>
+            <div style="justify-content: center" th:each="brand: ${brands}">
+                <h3><a class="buttonLookFilter mediumButton"
+                       th:href="@{|/branddetails/${brand.id}|}"
+                       th:text="${brand.Name}">brand name</a></h3>
+            </div>
         </div>
     </div>
-</div>
     <div class="verticalLine2"></div>
     <div class="verticalLine3"></div>
 </div>

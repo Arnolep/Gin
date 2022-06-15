@@ -61,74 +61,74 @@
 </head>
 <body>
 <div class="banner">
-<div th:replace="fragments/header :: header">Header</div>
-<img class="foto" th:src="@{/img/historyofgin3.jpg}" src="../static/img/historyofgin3.jpg">
-<div class="slideshow-container">
-    <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg}"
-             src="../static/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg">
+    <div th:replace="fragments/header :: header">Header</div>
+    <img class="foto" th:src="@{/img/historyofgin3.jpg}" src="../static/img/historyofgin3.jpg">
+    <div class="slideshow-container">
+        <div class="mySlides fade" style="text-align:center">
+            <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg}"
+                 src="../static/img/aid10187263-v4-728px-Make-Gin-Step-4.jpg.jpg">
+        </div>
+        <div class="mySlides fade" style="text-align:center">
+            <img th:src="@{/img/frambozen.jpg}" src="../static/img/frambozen.jpg" width="728" height="410">
+        </div>
+
+        <div class="mySlides fade" style="text-align:center">
+            <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg}"
+                 src="../static/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg">
+        </div>
+        <div class="mySlides fade" style="text-align:center">
+            <img th:src="@{/img/NTK_Tanqueray_Social.jpg}" src="../static/img/NTK_Tanqueray_Social.jpg" width="728"
+                 height="410">
+        </div>
+
+        <div class="mySlides fade" style="text-align:center">
+            <img th:src="@{/img/tefal-3.jpg}" src="../static/img/tefal-3.jpg" width="728" height="410">
+        </div>
+        <div class="mySlides fade" style="text-align:center">
+            <img th:src="@{/img/malfy-italian-gin_3.png}" src="../static/img/malfy-italian-gin_3.png" width="728"
+                 height="410">
+        </div>
+
     </div>
-    <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/frambozen.jpg}" src="../static/img/frambozen.jpg" width="728" height="410">
+    <img class="foto2" th:src="@{/img/historyofgin2.jpg}" src="../static/img/historyofgin2.jpg">
+    <br>
+    <div style="text-align:center" class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
     </div>
 
-    <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg}"
-             src="../static/img/aid10187263-v4-728px-Make-Gin-Step-8.jpg.jpg">
-    </div>
-    <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/NTK_Tanqueray_Social.jpg}" src="../static/img/NTK_Tanqueray_Social.jpg" width="728"
-             height="410">
-    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-    <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/tefal-3.jpg}" src="../static/img/tefal-3.jpg" width="728" height="410">
-    </div>
-    <div class="mySlides fade" style="text-align:center">
-        <img th:src="@{/img/malfy-italian-gin_3.png}" src="../static/img/malfy-italian-gin_3.png" width="728"
-             height="410">
-    </div>
-
-</div>
-<img class="foto2" th:src="@{/img/historyofgin2.jpg}" src="../static/img/historyofgin2.jpg">
-<br>
-<div style="text-align:center" class="dots">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-    <span class="dot" onclick="currentSlide(5)"></span>
-    <span class="dot" onclick="currentSlide(6)"></span>
-</div>
-
-<script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
-            slideIndex = 1
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
         }
-        if (n < 1) {
-            slideIndex = slides.length
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
         }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
-</script>
+    </script>
 </div>
 </body>
 </html>

@@ -6,41 +6,42 @@
     <title>Nieuw merk</title>
 </head>
 <body>
-
-<div th:replace="fragments/header :: header">Header</div>
-
-
-<div class="row1">
-    <div class="row1content">
+<div class="banner">
+    <div th:replace="fragments/header :: header">Header</div>
 
 
-        <h2>new party</h2>
+    <div class="row1">
+        <div class="row1content">
 
-        <form th:action="@{|/admin/brandnew|}" method="post">
 
-            <div class="venueinfo">
-                <div class="infoLine">
-                    <label for="brandName" class="infoLineName">Naam: </label>
-                    <input id="brandName" th:field="*{brand.name}" class="infoLineValue">
+            <h2>new party</h2>
+
+            <form th:action="@{|/admin/brandnew|}" method="post">
+
+                <div class="venueinfo">
+                    <div class="infoLine">
+                        <label for="brandName" class="infoLineName">Naam: </label>
+                        <input id="brandName" th:field="*{brand.name}" class="infoLineValue">
+                    </div>
+                    <div class="infoLine">
+                        <label for="brandDescription" class="infoLineName">Beschrijving: </label>
+                        <input id="brandDescription" th:field="*{brand.description}" class="infoLineValue">
+                    </div>
+                    <div class="infoLine">
+                        <label for="brandIntroduced" class="infoLineName">Geïntroduceerd: </label>
+                        <input id="brandIntroduced" th:field="*{brand.introduced}" class="infoLineValue">
+                    </div>
+                    <div class="infoLine">
+                        <label for="brandRecept" class="infoLineName">Bijhorende cocktail ID: </label>
+                        <input id="brandRecept" th:field="*{brand.recept}" class="infoLineValue">
+                    </div>
+                    <div class="infoLine">
+                        <a th:href="@{|/brandlist|}" class="buttonLook editButton">cancel</a>
+                        <input type="submit" value="create" class="buttonLook editButton">
+                    </div>
                 </div>
-                <div class="infoLine">
-                    <label for="brandDescription" class="infoLineName">Beschrijving: </label>
-                    <input id="brandDescription" th:field="*{brand.description}" class="infoLineValue">
-                </div>
-                <div class="infoLine">
-                    <label for="brandIntroduced" class="infoLineName">Geïntroduceerd: </label>
-                    <input id="brandIntroduced" th:field="*{brand.introduced}" class="infoLineValue">
-                </div>
-                <div class="infoLine">
-                    <label for="brandRecept" class="infoLineName">Bijhorende cocktail ID: </label>
-                    <input id="brandRecept" th:field="*{brand.recept}" class="infoLineValue">
-                </div>
-                <div class="infoLine">
-                    <a th:href="@{|/brandlist|}" class="buttonLook editButton">cancel</a>
-                    <input type="submit" value="create" class="buttonLook editButton">
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 </body>

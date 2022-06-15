@@ -7,63 +7,65 @@
 </head>
 <body>
 <div class="banner">
-<div th:replace="fragments/header :: header">Header</div>
-<div class="row1">
-    <div class="row1content" th:if="${recept}">
-        <div class="prevButtonDiv">
-            <a class="buttonLookFilter smallButton" th:href="@{|/receptdetails1/${recept.id}/prev|}">&lt;</a>
+    <div th:replace="fragments/header :: header">Header</div>
+    <div class="row1">
+        <div class="row1content" th:if="${recept}">
+            <div class="prevButtonDiv">
+                <a class="buttonLookFilter smallButton" th:href="@{|/receptdetails1/${recept.id}/prev|}">&lt;</a>
+            </div>
+            <div class="nextButtonDiv">
+                <a class="buttonLookFilter smallButton" th:href="@{|/receptdetails1/${recept.id}/next|}">&gt;</a>
+            </div>
+            <h2 th:text="${recept.getName}">receptdetails</h2>
+            <div class="info">
+                <div class="infoName">Produce:</div>
+                <div class="infoValue" th:text="${recept.getProduce()}">produce</div>
+            </div>
+            <div class="info">
+                <div class="infoName">Condiments:</div>
+                <div class="infoValue" th:text="${recept.getCondiments()}">condiments</div>
+            </div>
+            <div class="info">
+                <div class="infoName">Baking and Spices:</div>
+                <div class="infoValue" th:text="${recept.getBakingAndSpices()}">bakingNspices</div>
+            </div>
+            <div class="info">
+                <div class="infoName">Liquids:</div>
+                <div class="infoValue" th:text="${recept.getLiquids()}">liquids</div>
+            </div>
+            <div class="info">
+                <div class="infoName">Price:</div>
+                <div class="infoValue" th:text="${recept.getPrice()}">Price</div>
+            </div>
+            <button sec:authorize="isAuthenticated()" class="buttonLookFilter smallButton">
+                <a th:href="@{|/receptfavorite/${recept.id}|}"><p>add to favorite</p></a>
+            </button>
         </div>
-        <div class="nextButtonDiv">
-            <a class="buttonLookFilter smallButton" th:href="@{|/receptdetails1/${recept.id}/next|}">&gt;</a>
-        </div>
-        <h2 th:text="${recept.getName}">receptdetails</h2>
-        <div class="info">
-            <div class="infoName">Produce:</div>
-            <div class="infoValue" th:text="${recept.getProduce()}">produce</div>
-        </div>
-        <div class="info">
-            <div class="infoName">Condiments:</div>
-            <div class="infoValue" th:text="${recept.getCondiments()}">condiments</div>
-        </div>
-        <div class="info">
-            <div class="infoName">Baking and Spices:</div>
-            <div class="infoValue" th:text="${recept.getBakingAndSpices()}">bakingNspices</div>
-        </div>
-        <div class="info">
-            <div class="infoName">Liquids:</div>
-            <div class="infoValue" th:text="${recept.getLiquids()}">liquids</div>
-        </div>
-        <div class="info">
-            <div class="infoName">Price:</div>
-            <div class="infoValue" th:text="${recept.getPrice()}">Price</div>
-        </div>
-        <button sec:authorize="isAuthenticated()" class="buttonLookFilter smallButton">
-            <a th:href="@{|/receptfavorite/${recept.id}|}"><p>add to favorite</p></a>
-        </button>
     </div>
-</div>
 
-    <div class="favlist col-12 col-sm-3 col-lg-12" sec:authorize="isAuthenticated()" th:each="favorite: ${favoritelist}">
+    <div class="favlist col-12 col-sm-3 col-lg-12" sec:authorize="isAuthenticated()"
+         th:each="favorite: ${favoritelist}">
         <button class="buttonLookFilter mediumButton fav">
-            <a th:href="@{|/receptdetails1/${favorite.id}|}"> <h3><span  th:text="${favorite.Name}">favorite name</span></h3></a>
+            <a th:href="@{|/receptdetails1/${favorite.id}|}"><h3><span th:text="${favorite.Name}">favorite name</span>
+            </h3></a>
         </button>
 
     </div>
-<div class="row1">
-    <div class="row1content">
-        <h3>Terug naar overzicht? </h3>
-        <div class="list">
-            <a class="buttonLookFilter smallButton"
-               th:href="@{|/receptenlist|}"
-            >Cocktails</a>
+    <div class="row1">
+        <div class="row1content">
+            <h3>Terug naar overzicht? </h3>
+            <div class="list">
+                <a class="buttonLookFilter smallButton"
+                   th:href="@{|/receptenlist|}"
+                >Cocktails</a>
+            </div>
         </div>
     </div>
-</div>
-<div class="row1">
-    <div class="row1content" th:unless="${recept}">
-        <p>Er is geen recept gekozen</p>
+    <div class="row1">
+        <div class="row1content" th:unless="${recept}">
+            <p>Er is geen recept gekozen</p>
+        </div>
     </div>
-</div>
 </div>
 </body>
 </html>
