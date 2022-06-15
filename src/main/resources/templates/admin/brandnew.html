@@ -20,24 +20,24 @@
 
                 <div class="venueinfo">
                     <div class="infoLine">
-                        <label for="brandName" class="infoLineName">Naam: </label>
+                        <label style="color: white" for="brandName" class="infoLineName">Naam: </label>
                         <input id="brandName" th:field="*{brand.name}" class="infoLineValue">
                     </div>
                     <div class="infoLine">
-                        <label for="brandDescription" class="infoLineName">Beschrijving: </label>
+                        <label style="color: white" for="brandDescription" class="infoLineName">Beschrijving: </label>
                         <input id="brandDescription" th:field="*{brand.description}" class="infoLineValue">
                     </div>
                     <div class="infoLine">
-                        <label for="brandIntroduced" class="infoLineName">Geïntroduceerd: </label>
+                        <label style="color: white" for="brandIntroduced" class="infoLineName">Geïntroduceerd: </label>
                         <input id="brandIntroduced" th:field="*{brand.introduced}" class="infoLineValue">
                     </div>
                     <div class="infoLine">
-                        <label for="brandRecept" class="infoLineName">Bijhorende cocktail ID: </label>
+                        <label style="color: white" for="brandRecept" class="infoLineName">Bijhorende cocktail ID: </label>
                         <input id="brandRecept" th:field="*{brand.recept}" class="infoLineValue">
                     </div>
                     <div class="infoLine">
-                        <a th:href="@{|/brandlist|}" class="buttonLook editButton">cancel</a>
-                        <input type="submit" value="create" class="buttonLook editButton">
+                        <a th:href="@{|/brandlist|}"  style="width: 75px;margin-bottom: 20px;margin-top: 20px" class="buttonLookFilter smallButton">cancel</a>
+                        <input type="submit" value="create" style="width: 75px" class="buttonLookFilter smallButton">
                     </div>
                 </div>
             </form>
