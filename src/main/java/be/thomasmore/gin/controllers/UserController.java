@@ -48,7 +48,7 @@ public class UserController {
     @PostMapping({"/user/register"})
     public String registerPost(
             @RequestParam String username,
-            @RequestParam String password,) {
+            @RequestParam String password) {
         User newUser = new User();
         newUser.setUsername(username);
         String hashedPassword = passwordEncoder.encode(password);
