@@ -14,6 +14,7 @@
             <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/brandnew|}" class="buttonLookFilter smallButton">New</a>
         </div>
         <h2>Merken</h2>
+        <br>
         <div th:unless="${showFilters==true}" class="filters">
             <a class="buttonLookFilter filterButton" th:href="@{/brandlist/filter}">filter</a>
         </div>
@@ -47,6 +48,8 @@
         </div>
     </div>
 </div>
+    <div class="verticalLine2"></div>
+    <div class="verticalLine3"></div>
 </div>
 
 </body>

@@ -181,7 +181,7 @@ a.mediumButton {
     margin: 10px auto;
     height: 100px;
     width: 400px;
-    border: cornflowerblue solid 2px;;
+    border: cornflowerblue solid 2px;
     font-size: 1.2em;
     padding: 1em;
 }
@@ -287,7 +287,7 @@ h3{
 .abouttext {
     margin-left: 2.5%;
     width: 49%;
-    border: 5px solid white;
+    border: cornflowerblue solid 3px;;
     text-align: center;
     float: left;
     color: white;
@@ -323,6 +323,26 @@ h3{
     align-items: center;
     justify-content: center;
 
+}
+.verticalLine2 {
+    position: absolute;
+    bottom: 0;
+    left: 160px;
+    height: 200px;
+    width: 10px;
+    background-color: cornflowerblue;
+    border-radius: 20px 20px 0 0;
+    border: white solid 1px;
+}
+.verticalLine3 {
+    position: absolute;
+    bottom: 0;
+    right: 160px;
+    height: 200px;
+    width: 10px;
+    background-color: cornflowerblue;
+    border-radius: 20px 20px 0 0;
+    border: white solid 1px;
 }
 
 .socials li {
